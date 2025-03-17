@@ -4,9 +4,9 @@ Contient un ensemble de script pour me permettre de faire communiquer kamailio a
 
 ## requirements
 
-    ### Pour la base de données
+### Pour la base de données
 
-    J'utilise [https://www.psycopg.org/install/](psycopg) pour la connexion à la base de donnée postgreSQL
+J'utilise [psycopg](https://www.psycopg.org/install/) pour la connexion à la base de donnée postgreSQL
 
 
 ## le fichier configs
