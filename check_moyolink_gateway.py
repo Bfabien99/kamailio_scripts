@@ -14,7 +14,7 @@ try:
     # recupération du realm du gateways
     with psycopg.connect(connection_url) as conn:
         with conn.cursor() as cur:
-            cur.execute("SELECT realm price FROM gateways WHERE code=%s", (code,))
+            cur.execute("SELECT realm price FROM gateways WHERE code=%s", (gateway_code,))
             record = cur.fetchone()
             
             if(record):
