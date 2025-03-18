@@ -1,4 +1,6 @@
-from configs import connection_url, sys, psycopg
+from configs import connection_url
+import sys
+import psycopg
 
 try:
     ## récupération du numéro de téléphone
