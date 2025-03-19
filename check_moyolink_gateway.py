@@ -8,7 +8,7 @@ try:
     ## récupération du numéro de téléphone
     callee_phone_number = str(sys.argv[1])
     if not callee_phone_number:
-        print("success='False';message='Le numéro à joindre est absent'")
+        print("success='False';message='Number to call is absent'")
 
     ## recupération des 5 premiers caractères representant le code du gateway
     gateway_code = str(callee_phone_number[0:5]).upper()
@@ -28,6 +28,6 @@ try:
                 record_str = format_for_kamailio(record)
                 print(f"success='True';{record_str};callee='{number_whithout_code}'")
             else:
-                print("success='False';message='gateway code is invalid'")
+                print("success='False';message='Gateway code is invalid'")
 except Exception as e:
     print(f"success='False';message='{str(e)}'")

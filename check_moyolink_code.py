@@ -9,7 +9,7 @@ try:
     password = str(sys.argv[2])
 
     if not customer_id or not password:
-        print("success='False';message='CustomerId ou password absent'")
+        print("success='False';message='CustomerId or password missing'")
 
     with psycopg.connect(connection_url, row_factory=psycopg.rows.dict_row) as conn:
         with conn.cursor() as cur:
@@ -23,6 +23,6 @@ try:
                 record_str = format_for_kamailio(record)
                 print(f"success='True';{record_str}")
             else:
-                print("success='False';message='application code is invalid'")
+                print("success='False';message='App code is invalid'")
 except Exception as e:
     print(f"success='False';message='{str(e)}'")
