@@ -40,3 +40,6 @@ def make_log(message: str = "", level: int = 1) -> None:
     log_function = log_levels.get(level, logger.debug)
     log_message = f"[{filename}] {message}"
     log_function(log_message)
+
+def format_for_kamailio(record):
+    return ";".join(f"{k}='{v}'" for k, v in record.items())
