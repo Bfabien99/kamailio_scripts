@@ -2,7 +2,7 @@ from configs import connection_url
 import sys
 import psycopg
 
-from helpers import make_log
+from helpers import format_for_kamailio
 
 try:
     customer_id = str(sys.argv[1])
@@ -20,7 +20,8 @@ try:
             record = cur.fetchone()
 
             if record:
-                print(f"success='True';message='{record['password']}'")
+                record_str = format_for_kamailio(record)
+                print(f"success='True';{record_str}")
             else:
                 print("success='False';message='application code is invalid'")
 except Exception as e:
