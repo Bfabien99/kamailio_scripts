@@ -14,7 +14,7 @@ try:
     with psycopg.connect(connection_url, row_factory=psycopg.rows.dict_row) as conn:
         with conn.cursor() as cur:
             cur.execute(
-                "SELECT * FROM call_verifications WHERE 'customerId'=%s and password=%s",  # Ajustez la syntaxe de la requête
+                'SELECT * FROM call_verifications WHERE "customerId"=%s and password=%s',  # Ajustez la syntaxe de la requête
                 (customer_id, password),
             )
             record = cur.fetchone()
