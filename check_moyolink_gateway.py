@@ -19,7 +19,7 @@ try:
     with psycopg.connect(connection_url, row_factory=psycopg.rows.dict_row) as conn:
         with conn.cursor() as cur:
             cur.execute(
-                "SELECT realm, password FROM gateways WHERE code=%s",
+                "SELECT * FROM gateways WHERE code=%s",
                 (gateway_code,),
             )
             record = cur.fetchone()
